@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ашерское служение — Церковь «Любовь Христа»</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+  :root{
+    --bg:#faf5ef; --panel:#ffffff; --panel2:#f6ede3; --line:#ecdccc;
+    --ink:#2f2620; --mut:#8a7c6e;
+    --acc:#c17a58; --acc2:#d59470; --deep:#a35f42; --soft:#f3e7da;
+    --grad:linear-gradient(135deg,#c17a58,#d59470);
+    --glow:0 18px 50px rgba(193,122,88,.22);
+    --glows:0 10px 30px rgba(193,122,88,.14);
+    --shadow:0 24px 60px rgba(120,80,55,.16);
+  }
+  *{box-sizing:border-box}
+  html{overflow-x:hidden;scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 'Manrope',-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+  h1,h2,h3,h4,p{overflow-wrap:break-word}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  h1,h2,h3,.uf{font-family:'Unbounded',sans-serif;letter-spacing:-.02em}
+  .grad{color:transparent;background:var(--grad);-webkit-background-clip:text;background-clip:text}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+  /* hero */
+  .hero{position:relative;text-align:center;padding:78px 0 46px;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:-30% -20% auto;height:620px;
+    background:radial-gradient(50% 55% at 50% 0%,rgba(193,122,88,.14),transparent 70%);z-index:0}
+  .hero>*{position:relative;z-index:1}
+  .crown{margin:0 auto 18px;display:block}
+  .crown svg{width:120px;height:120px;display:block;margin:0 auto;filter:drop-shadow(0 10px 24px rgba(163,95,66,.22))}
+  .crown img{width:130px;height:auto;display:block;margin:0 auto}
+  .hero h1{font-size:58px;line-height:1.04;margin:0 0 16px;font-weight:800}
+  .hero .sub{display:inline-block;font-family:'Unbounded';font-size:17px;font-weight:600;color:var(--deep);
+    padding:9px 22px;border-radius:40px;border:1px solid var(--line);background:#fff;
+    box-shadow:var(--glows);margin-bottom:22px}
+  .hero p.lead-h{font-size:18px;color:var(--mut);max-width:760px;margin:0 auto}
+  /* video */
+  .videowrap{max-width:760px;margin:36px auto 0}
+  .video{position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+    background:var(--panel2);box-shadow:var(--shadow)}
+  .video video,.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .video .placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;gap:10px;
+    background:linear-gradient(135deg,#f7ecdf,#f2ded0)}
+  .video .placeholder .play{width:74px;height:74px;border-radius:50%;background:var(--grad);display:grid;place-items:center;
+    font-size:28px;color:#fff;box-shadow:var(--glow);padding-left:5px}
+  .video .placeholder small{color:var(--mut);font-size:13px;max-width:340px}
+  .vcap{color:var(--mut);font-size:14px;margin-top:14px}
+  /* opening verse */
+  .verseband{position:relative;text-align:center;padding:50px 0}
+  .verseband .q{font-family:'Unbounded';font-size:26px;line-height:1.36;font-weight:600;max-width:900px;margin:0 auto 16px;color:var(--deep)}
+  .verseband cite{color:var(--acc);font-style:normal;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-family:'Unbounded'}
+  /* sections */
+  section{padding:58px 0;position:relative;border-top:1px solid var(--line)}
+  .h2{font-size:35px;font-weight:700;margin:0 0 14px;line-height:1.12}
+  .lead{color:var(--mut);font-size:18px;max-width:840px;margin:0 0 34px}
+  /* quality chips */
+  .quals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .qual{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px 22px;transition:.25s}
+  .qual:hover{border-color:var(--acc);box-shadow:var(--glow);transform:translateY(-4px)}
+  .qual .ic{font-size:30px}
+  .qual h4{font-family:'Unbounded';font-size:17px;margin:14px 0 8px}
+  .qual p{margin:0;color:var(--mut);font-size:14px}
+  /* anketa */
+  .anketa{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 38px;box-shadow:var(--glows)}
+  .anketa .q-item{padding:18px 0;border-top:1px solid var(--line)}
+  .anketa .q-item:first-of-type{border-top:none;padding-top:4px}
+  .anketa .q-item .qt{font-family:'Unbounded';font-size:16px;font-weight:600;margin:0 0 12px;display:flex;gap:10px;align-items:flex-start}
+  .anketa .q-item .qt .n{color:var(--acc);flex-shrink:0}
+  .opts{display:flex;flex-wrap:wrap;gap:9px}
+  .opt{display:inline-flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);
+    border-radius:30px;padding:8px 16px;font-size:14px;cursor:pointer;transition:.18s;user-select:none}
+  .opt input{display:none}
+  .opt:hover{border-color:var(--acc)}
+  .opt.on{background:var(--grad);color:#fff;border-color:transparent;font-weight:700;box-shadow:var(--glows)}
+  .anketa .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .anketa .note{color:var(--mut);font-size:13.5px;margin:22px 0 0}
+  /* служения cards */
+  .serv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .scard{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);
+    border-radius:20px;padding:28px 24px;transition:.22s;position:relative;overflow:hidden}
+  .scard:before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--grad);opacity:0;transition:.22s}
+  .scard:hover{border-color:var(--acc);box-shadow:var(--glow);transform:translateY(-4px)}
+  .scard:hover:before{opacity:1}
+  .scard .ic{font-size:32px}
+  .scard h4{font-family:'Unbounded';font-size:19px;margin:14px 0 8px}
+  .scard p{margin:0 0 16px;color:var(--mut);font-size:14px;flex:1}
+  .scard .go{font-weight:700;font-size:13px;color:var(--acc);letter-spacing:.04em}
+  .scard.soon{opacity:.75}
+  .scard .badge{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--acc);background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+  /* resources */
+  .res{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .rcard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 22px;transition:.22s}
+  .rcard:hover{border-color:var(--acc);box-shadow:var(--glow);transform:translateY(-3px)}
+  .rcard .ic{font-size:26px}
+  .rcard h4{font-family:'Unbounded';font-size:15.5px;margin:12px 0 6px}
+  .rcard p{margin:0 0 10px;color:var(--mut);font-size:13px}
+  .rcard .go{font-weight:700;font-size:12.5px;color:var(--acc)}
+  /* final */
+  .final{background:var(--grad);border-radius:26px;padding:54px 44px;text-align:center;color:#fff;margin-top:10px;box-shadow:var(--glow);position:relative;overflow:hidden}
+  .final h2{font-size:31px;margin:0 0 14px;color:#fff}
+  .final .fverse{font-style:italic;font-weight:600;font-size:18px;margin:0 auto 8px;max-width:640px;color:#fff5ef}
+  .final .fverse b{display:block;font-style:normal;margin-top:8px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#ffe6d6}
+  .foot{color:var(--mut);text-align:center;font-size:13px;padding:34px 0}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Unbounded';font-weight:600;font-size:14px;text-decoration:none;
+    color:#fff;background:var(--grad);padding:13px 26px;border-radius:40px;box-shadow:var(--glow);transition:.2s;border:0;cursor:pointer}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:#fff;color:var(--deep);border:1px solid var(--line);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--acc)}
+  @media(max-width:860px){
+    .quals,.serv{grid-template-columns:1fr 1fr}
+    .res{grid-template-columns:1fr 1fr}
+    .hero{padding:60px 0 40px} .hero h1{font-size:40px} .hero .sub{font-size:15px}
+    .h2{font-size:27px} .verseband{padding:38px 0} .verseband .q{font-size:21px}
+    section{padding:46px 0}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 16px}
+    .hero{padding:46px 0 32px} .hero h1{font-size:31px} .crown svg{width:96px;height:96px}
+    .hero .sub{font-size:13.5px;padding:7px 15px} .hero p.lead-h{font-size:16px}
+    .h2{font-size:22px} .lead{font-size:15.5px} .eyebrow{letter-spacing:.16em}
+    .verseband .q{font-size:18px}
+    .quals,.serv,.res{grid-template-columns:1fr}
+    .anketa{padding:28px 20px} .final{padding:38px 22px} .final h2{font-size:24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="crown">
+      <!-- Логотип церкви (сердце + крест). Чтобы поставить реальный PNG — заменить на:
+           <img src="photos/logo.png" alt="Церковь «Любовь Христа»"> -->
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Церковь «Любовь Христа»">
+        <path d="M50 85 C18 64 8 45 8 30 C8 16 19 9 30 9 C40 9 46 15 50 23 C54 15 60 9 70 9 C81 9 92 16 92 30 C92 45 82 64 50 85 Z"
+              stroke="#c17a58" stroke-width="4.2" stroke-linejoin="round"/>
+        <path d="M56 27 H66 V42 H76 V52 H66 V80 H56 V52 H46 V42 H56 Z"
+              stroke="#c17a58" stroke-width="4.2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Ашерское <span class="grad">служение</span></h1>
+    <div class="sub">Церковь «Любовь Христа»</div>
+    <p class="lead-h">Духовное возрастание через незаметную работу в организации — ту, без которой люди просто не получат Слова. Мы готовим пространство, чтобы служение состоялось.</p>
+
+    <!-- ВИДЕО: короткий ролик «что такое Ашерское служение» -->
+    <div class="videowrap">
+      <div class="video">
+        <!-- ВАРИАНТ 1 — свой файл:
+        <video controls poster="photos/video-poster.jpg">
+          <source src="photos/intro.mp4" type="video/mp4">
+        </video> -->
+        <!-- ВАРИАНТ 2 — YouTube/VK:
+        <iframe src="https://www.youtube.com/embed/XXXX" allowfullscreen></iframe> -->
+        <!-- Пока — заглушка. Вставьте ссылку/файл выше и удалите блок ниже: -->
+        <div class="placeholder">
+          <div class="play">▶</div>
+          <b style="font-family:'Unbounded';font-size:16px;color:var(--deep)">Что такое Ашерское служение</b>
+          <small>Сюда вставим короткое видео (1–2 мин): смысл служения и куда идти дальше.</small>
+        </div>
+      </div>
+      <div class="vcap">🎬 Посмотри короткое видео — за 2 минуты поймёшь суть служения.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ОТКРЫВАЮЩИЙ СТИХ ============ -->
+<div class="verseband"><div class="wrap">
+  <p class="q">«Для Асира — хлеб его будет тучен; он будет доставлять царские яства»</p>
+  <cite>Бытие 49:20</cite>
+</div></div>
+
+<!-- ============ СУТЬ ============ -->
+<section><div class="wrap">
+  <p class="eyebrow">Суть</p>
+  <h2 class="h2">Незаметная работа, на которой стоит служение</h2>
+  <p class="lead">Ашерское служение — это про подготовку. Пока звучит Слово, кто-то встретил человека, поставил стулья, включил свет, накрыл стол, собрал горницу. Без этой тихой работы люди просто не смогут услышать. Здесь мы возрастаем в верности в малом.</p>
+  <div class="quals">
+    <div class="qual"><div class="ic">🛠️</div><h4>Готовим пространство</h4><p>Организуем всё «за кадром», чтобы служение состоялось без сбоев.</p></div>
+    <div class="qual"><div class="ic">🌱</div><h4>Возрастаем в малом</h4><p>Духовный рост через верность в незаметном — там, где никто не аплодирует.</p></div>
+    <div class="qual"><div class="ic">🤲</div><h4>Служим людям</h4><p>Наша забота о деталях открывает людям путь к Слову и общению.</p></div>
+  </div>
+</div></section>
+
+<!-- ============ АНКЕТА СИНХРОНИЗАЦИИ ============ -->
+<section id="anketa"><div class="wrap">
+  <p class="eyebrow">Шаг 1 · синхронизация</p>
+  <h2 class="h2">Давай познакомимся — короткая анкета</h2>
+  <p class="lead">Ответь на несколько вопросов, чтобы мы поняли, где ты сейчас, и подсказали, с чего начать именно тебе.</p>
+
+  <div class="anketa">
+    <div class="q-item">
+      <p class="qt"><span class="n">1.</span> У кого ты учишься (наставник / лидер)?</p>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="q1"> Есть наставник</label>
+        <label class="opt"><input type="radio" name="q1"> Пока нет</label>
+        <label class="opt"><input type="radio" name="q1"> Не знаю, к кому идти</label>
+      </div>
+    </div>
+    <div class="q-item">
+      <p class="qt"><span class="n">2.</span> Ходишь ли на кафедру?</p>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="q2"> Да, регулярно</label>
+        <label class="opt"><input type="radio" name="q2"> Иногда</label>
+        <label class="opt"><input type="radio" name="q2"> Нет</label>
+      </div>
+    </div>
+    <div class="q-item">
+      <p class="qt"><span class="n">3.</span> Ходишь ли в горницу? К кому?</p>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="q3"> Да, есть своя горница</label>
+        <label class="opt"><input type="radio" name="q3"> Ищу горницу</label>
+        <label class="opt"><input type="radio" name="q3"> Пока не хожу</label>
+      </div>
+    </div>
+    <div class="q-item">
+      <p class="qt"><span class="n">4.</span> Ходишь ли на утреннее сосредоточение?</p>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="q4"> Да</label>
+        <label class="opt"><input type="radio" name="q4"> Иногда</label>
+        <label class="opt"><input type="radio" name="q4"> Нет</label>
+      </div>
+    </div>
+    <div class="q-item">
+      <p class="qt"><span class="n">5.</span> Живёшь ли в Анапе?</p>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="q5"> Да, в Анапе</label>
+        <label class="opt"><input type="radio" name="q5"> Рядом / приезжаю</label>
+        <label class="opt"><input type="radio" name="q5"> В другом городе</label>
+      </div>
+    </div>
+
+    <div class="cta">
+      <!-- Заменить href на Google-форму или @ответственного в Telegram -->
+      <a class="btn" href="#servichenia">Отправить и выбрать служение ↓</a>
+      <a class="btn ghost" href="https://t.me/" target="_blank" rel="noopener">Написать ответственному</a>
+    </div>
+    <p class="note">💡 Ответы сохраняются только у тебя в браузере. Чтобы официально закрепиться за служением — напиши ответственному или заполни форму.</p>
+  </div>
+</div></section>
+
+<!-- ============ СЛУЖЕНИЯ (ПЛАШКИ) ============ -->
+<section id="servichenia"><div class="wrap">
+  <p class="eyebrow">Шаг 2 · выбери направление</p>
+  <h2 class="h2">Служения — куда можно встать</h2>
+  <p class="lead">Нажми на плашку — откроется отдельная страница: что это, что входит, пошаговый план с чекбоксами и все нужные материалы.</p>
+  <div class="serv">
+
+    <a class="scard" href="sluzhenie-muzhskie-gornitsy.html">
+      <div class="ic">🕯️</div>
+      <h4>Мужские горницы</h4>
+      <p>Организация и сопровождение мужских домашних групп: приглашения, сбор, отчёт.</p>
+      <span class="go">Открыть →</span>
+    </a>
+
+    <a class="scard soon" href="#">
+      <div class="ic">🌸</div>
+      <h4>Женские горницы</h4>
+      <p>Организация и сопровождение женских домашних групп.</p>
+      <span class="go">Открыть →</span>
+      <span class="badge">скоро</span>
+    </a>
+
+    <a class="scard soon" href="#">
+      <div class="ic">⛪</div>
+      <h4>Храмовые служения</h4>
+      <p>Подготовка зала, встреча, порядок и чистота на собраниях.</p>
+      <span class="go">Открыть →</span>
+      <span class="badge">скоро</span>
+    </a>
+
+    <a class="scard soon" href="#">
+      <div class="ic">🌅</div>
+      <h4>Утренние сосредоточения</h4>
+      <p>Организация утренних встреч: время, место, оповещение, сопровождение.</p>
+      <span class="go">Открыть →</span>
+      <span class="badge">скоро</span>
+    </a>
+
+    <a class="scard soon" href="#">
+      <div class="ic">🔌</div>
+      <h4>Техническое служение</h4>
+      <p>Свет, звук, трансляция, техника — всё, что должно работать без сбоев.</p>
+      <span class="go">Открыть →</span>
+      <span class="badge">скоро</span>
+    </a>
+
+  </div>
+</div></section>
+
+<!-- ============ ПОЛЕЗНЫЕ МАТЕРИАЛЫ ============ -->
+<section><div class="wrap">
+  <p class="eyebrow">Материалы</p>
+  <h2 class="h2">Полезное для всех служений</h2>
+  <p class="lead">Общие чаты, таблицы, отчёты и контакты ответственных. Внутри каждого служения — свои материалы.</p>
+  <div class="res">
+    <a class="rcard" href="https://t.me/" target="_blank" rel="noopener"><div class="ic">💬</div><h4>Общий чат</h4><p>Новости и координация служения.</p><span class="go">Перейти →</span></a>
+    <a class="rcard" href="#" target="_blank" rel="noopener"><div class="ic">📊</div><h4>Таблица учёта</h4><p>Расписание, дежурства, состав.</p><span class="go">Открыть →</span></a>
+    <a class="rcard" href="#" target="_blank" rel="noopener"><div class="ic">📝</div><h4>Отчёты</h4><p>Форма и примеры отчётов.</p><span class="go">Открыть →</span></a>
+    <a class="rcard" href="https://t.me/" target="_blank" rel="noopener"><div class="ic">🙋</div><h4>Ответственные</h4><p>К кому обратиться с вопросом.</p><span class="go">Написать →</span></a>
+  </div>
+</div></section>
+
+<!-- ============ ЗАКЛЮЧЕНИЕ ============ -->
+<section><div class="wrap">
+  <div class="final">
+    <h2>Верный в малом — верен и во многом</h2>
+    <p class="fverse">«Верный в малом и во многом верен».<b>Луки 16:10</b></p>
+  </div>
+</div></section>
+
+<div class="foot wrap">Ашерское служение · Церковь «Любовь Христа» · Анапа</div>
+
+<script>
+  document.querySelectorAll('.opts').forEach(function(group){
+    var single = group.hasAttribute('data-single');
+    group.querySelectorAll('.opt').forEach(function(opt){
+      opt.addEventListener('click', function(){
+        if(single){ group.querySelectorAll('.opt').forEach(function(o){o.classList.remove('on');}); }
+        opt.classList.toggle('on');
+        saveAnketa();
+      });
+    });
+  });
+  function saveAnketa(){
+    var st = [];
+    document.querySelectorAll('.opt.on').forEach(function(o){ st.push(o.textContent.trim()); });
+    try{ localStorage.setItem('asher_anketa', JSON.stringify(st)); }catch(e){}
+  }
+  (function restore(){
+    try{
+      var st = JSON.parse(localStorage.getItem('asher_anketa')||'[]');
+      document.querySelectorAll('.opt').forEach(function(o){
+        if(st.indexOf(o.textContent.trim())>-1) o.classList.add('on');
+      });
+    }catch(e){}
+  })();
+</script>
+</body>
+</html>
