@@ -68,7 +68,9 @@
   .step .tt .num{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:3px}
   .step .tt h3{font-size:18px;margin:0;font-weight:600}
   .step.done .tt h3{color:var(--mut);text-decoration:line-through;text-decoration-color:rgba(138,124,110,.5)}
-  .step .chev{flex-shrink:0;color:var(--mut);font-size:12px;margin-top:8px;transition:transform .25s}
+  .step .chev{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--soft);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--acc);font-size:15px;margin-top:0;transition:transform .25s,background .2s}
+  .step .head:hover .chev{background:#fff;border-color:var(--acc)}
   .step.open .chev{transform:rotate(180deg)}
   .step .body{display:none;padding:0 24px 24px 70px}
   .step.open .body{display:block}
@@ -314,7 +316,7 @@
   </div>
 </div></section>
 
-<div class="foot wrap">Мужские горницы · Ашерское служение · Церковь «Любовь Христа» · Анапа</div>
+<div class="foot wrap">Мужские горницы · Ашерское служение · Церковь «Любовь Христа»</div>
 
 <script>
   var KEY='asher_mg_steps';
